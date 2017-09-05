@@ -1,0 +1,19 @@
+Sping multiple vagrant machines of CentOS7 with one command for clustering.
+
+Requirements:
+    * Virtualbox-5.0
+    * Vagrant-1.8.5 or greater
+
+How to do it:
+
+$ cd multiple-vagrant-machines
+
+$ ./build-machines.sh
+
+Above script will automatically pull the official CentOS7 box from vagrant cloud and spin 4-machines (1-master, 2-slaves, 1-nginx)
+
+Script will automatically update the instances and install basic softwares during the provision.
+
+Script will automatically takes the public IP from your Host NIC. No matter if you are using multipl NIC's.
+
+At the end script will display the IP's of all the instances and SSH into the master instance.
