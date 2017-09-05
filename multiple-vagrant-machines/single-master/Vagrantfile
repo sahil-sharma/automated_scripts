@@ -12,33 +12,33 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define "master" do |m1|
       m1.vm.hostname = "master"
-      #m1.vm.network "public_network", bridge: ENV['MY_IP']
-      m1.vm.network "public_network", bridge: "eno1"
+      m1.vm.network "public_network", bridge: ENV['MY_IP']
+      #m1.vm.network "public_network", bridge: "eno1"
       #m1.vm.network "private_network", ip: "172.21.2.11"
       m1.vm.provision "shell", path: "master.sh"
   end
 
   config.vm.define "slave1" do |m2|
       m2.vm.hostname = "slave1"
-      #m2.vm.network "public_network", bridge: ENV['MY_IP']
-      m2.vm.network "public_network", bridge: "eno1"
+      m2.vm.network "public_network", bridge: ENV['MY_IP']
+      #m2.vm.network "public_network", bridge: "eno1"
       #m2.vm.network "private_network", ip: "172.21.2.14"
       m2.vm.provision "shell", path: "nodes.sh"
   end
 
   config.vm.define "slave2" do |m3|
       m3.vm.hostname = "slave2"
-      #m3.vm.network "public_network", bridge: ENV['MY_IP']
+      m3.vm.network "public_network", bridge: ENV['MY_IP']
       #m3.vm.network "private_network", ip: "172.21.2.15"
-      m3.vm.network "public_network", bridge: "eno1"
+      #m3.vm.network "public_network", bridge: "eno1"
       m3.vm.provision "shell", path: "nodes.sh"
   end
 
   config.vm.define "nginx" do |m4|
       m4.vm.hostname = "nginx"
-      #m3.vm.network "public_network", bridge: ENV['MY_IP']
+      m3.vm.network "public_network", bridge: ENV['MY_IP']
       #m3.vm.network "private_network", ip: "172.21.2.15"
-      m4.vm.network "public_network", bridge: "eno1"
+      #m4.vm.network "public_network", bridge: "eno1"
       m4.vm.provision "shell", path: "nodes.sh"
   end
 end
