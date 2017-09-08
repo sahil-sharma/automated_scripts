@@ -21,9 +21,9 @@ $ docker ps -a |grep registry
 
 5) Check the set-up:
 
-$ docker login http://docker-regirsty-IP:5000
+$ docker login https://docker-regirsty-IP:5000
 
-e.g.: docker login http://192.168.1.111:5000
+e.g.: docker login https://192.168.1.111:5000
 
 Enter username and password you entered in the script to login.
 
